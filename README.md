@@ -5,4 +5,4 @@
 - Ameya
 - Gavin
 - Nick
-- ChaiT
+- Chaitanya
