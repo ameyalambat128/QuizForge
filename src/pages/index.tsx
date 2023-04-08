@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/onlyQ.png" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center gap-5 pt-5 dark:bg-slate-900 dark:text-white">
+      <main className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
         <h1 className="flex items-center justify-center gap-1 text-3xl font-bold tracking-tighter">
           <Image src="/onlyQ.png" alt="logo" width={60} height={50} />
           <Image src="/textIcon.png" alt="logo" width={140} height={50} />

@@ -14,7 +14,7 @@ export default function TextField({ onSend, buttonClicked }: any) {
 
   return (
     <textarea
-      className="box-border max-w-full rounded bg-slate-200 p-2 text-black"
+      className="box-border max-w-full overflow-hidden rounded bg-slate-200 p-2 text-black"
       placeholder="Text here"
       onChange={(e) => setInput(e.target.value)}
       cols={100}
