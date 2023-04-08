@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main className="flex min-h-screen flex-col items-center gap-5 pt-5 dark:bg-slate-900 dark:text-white">
         <h1 className="text-3xl font-bold tracking-tighter">Quiz Forge</h1>
-        <TextField />
+        <TextField onSend={(input: any) => console.log(input)} />
         <Button
           name="Generate"
           color="white"
