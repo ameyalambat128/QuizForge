@@ -11,12 +11,15 @@ export default function Home() {
         <title>Quiz Forge</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/onlyQ.png" />
+        <link rel="icon" href="/square_icon.png" />
       </Head>
       <main className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
         <h1 className="flex items-center justify-center gap-1 text-3xl font-bold tracking-tighter">
-          <Image src="/onlyQ.png" alt="logo" width={60} height={50} />
-          <Image src="/textIcon.png" alt="logo" width={140} height={50} />
+
+          <a href="https://github.com/ameyalambat128/QuizForge" target="_blank">
+            <Image src="/onlyQ.png" alt="logo" width={60} height={50} />
+            <Image src="/textIcon.png" alt="logo" width={140} height={50} />
+          </a>
         </h1>
         <Dashboard />
       </main>

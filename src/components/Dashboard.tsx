@@ -27,21 +27,26 @@ function Dashboard() {
     // if (e.keyCode === 13) sendInput();
   };
 
+
   return (
     <div className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
       <textarea
-        className="box-border max-w-full rounded border-4 border-[#f1741b] bg-[#303030] p-2 text-white scrollbar-hide"
-        placeholder="Text here"
+        className="box-border max-w-full rounded border-4 border-[#f1741b] bg-[#303030] p-2 text-white scrollbar-hide font-prototype tracking-wider "
+        placeholder="Insert text here..."
         onChange={(e) => setInput(e.target.value)}
         cols={100}
         rows={20}
         onKeyDown={(e) => handleKeyDown(e)}
       />
       <button
-        className={`h-10 rounded bg-white p-2 font-bold text-black`}
+        className={`hover:scale-105 transition duration-500 ease-in-out h-20 w-40 rounded bg-2B2B2B 
+        p-2 text-#F5F5F5 border-4 border-[#f1741b] flex items-center justify-center font-prototype tracking-wider 
+        bg-gradient-to-r from-[#d48a35] to-[#e0572a]`}
+        style={{ fontSize: "22px" }}
         onClick={() => sendInput()}
       >
         Generate
+
       </button>
 
       <div className="flex flex-col justify-center gap-4 rounded-lg p-4">

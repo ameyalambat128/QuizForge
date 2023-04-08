@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Prototype';
+    src: url('/fonts/prototype.regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.font-prototype {
+    font-family: 'Prototype', sans-serif;
+}
