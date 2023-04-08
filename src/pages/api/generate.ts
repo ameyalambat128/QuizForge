@@ -19,9 +19,13 @@ export default async function handler(
     const prompt = req.body.prompt;
     const result = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `${prompt}` }],
+      messages: [
+        {
+          role: "user",
+          content: `Generate 10 multiple choices questions with answer keys where question comes first and then 4 options, text: ${prompt}`,
+        },
+      ],
     });
-    console.log(result.data.choices[0].message);
     const response = result.data.choices[0].message?.content;
     res.status(200).json({ message: response });
   } catch (error: any) {

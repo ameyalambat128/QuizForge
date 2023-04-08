@@ -5,12 +5,15 @@ import Axios from "axios";
 function Dashboard() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  // TODO: create loading
   const sendInput = async () => {
     console.log("sent: ", input);
     const { data } = await Axios.post("/api/generate", {
       prompt: input,
     });
+    if (!data) setLoading(!loading);
     setOutput(data.message);
     console.log(data);
   };
