@@ -16,6 +16,7 @@ export default function Button({
   width,
 }: Props) {
   const [clicked, setClicked] = useState(false);
+  console.log(clicked)
   return (
     <button
       className={`bg-white p-2 text-${textColor} w-${width} h-${height} rounded`}
