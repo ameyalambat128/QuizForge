@@ -5,7 +5,7 @@ export default function TextField({ onSend, buttonClicked }: any) {
 
   const sendInput = () => {
     onSend(input);
-    console.log("Prop Passed");
+    // console.log("Prop Passed");
   };
 
   const handleKeyDown = (e: any) => {
