@@ -39,7 +39,7 @@ function Dashboard() {
         Generate
       </button>
 
-      <div className="">{output}</div>
+      <div className="whitespace-pre-wrap">{output}</div>
     </div>
   );
 }
