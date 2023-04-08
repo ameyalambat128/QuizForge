@@ -11,6 +11,13 @@ const config = new Configuration({
 
 const openai = new OpenAIApi(config);
 
+function prompt_process(num_quiz: number, prompt: string): string {
+    let result:string = "Generate `${num_quiz}` MCQ with answer keys, \
+    :question comes first and then options, text: {prompt}"
+ 
+    return result
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -19,7 +26,7 @@ export default async function handler(
     const prompt = req.body.prompt;
     const result = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: `${prompt}` }],
+      messages: [{ role: "user", content: `${prompt_process(5, prompt)}` }],
     });
     console.log(result.data.choices[0].message);
     const response = result.data.choices[0].message?.content;
