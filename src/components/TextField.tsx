@@ -12,6 +12,7 @@ export default function TextField({ onSend, buttonClicked }: any) {
     if (e.keyCode === 13) sendInput();
   };
 
+  
 
   return (
     <textarea
@@ -21,6 +22,7 @@ export default function TextField({ onSend, buttonClicked }: any) {
       cols={100}
       rows={20}
       onKeyDown={(e) => handleKeyDown(e)}
+      maxLength={12}
     />
   );
 }
