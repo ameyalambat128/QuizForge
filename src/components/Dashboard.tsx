@@ -8,7 +8,7 @@ function Dashboard() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState();
   const [loading, setLoading] = useState(false);
-  
+
   // TODO: create loading
   const sendInput = async () => {
     console.log("sent to openai");
@@ -30,16 +30,14 @@ function Dashboard() {
   };
 
   const [value, setValue] = React.useState("");
-  
+
   const charLimit = React.useMemo(() => {
-    
     if (value.length >= 21000) {
       return "You have reached the maximum number of characters!";
     } else {
       return `${value.length} / ${21000}`;
     }
-  
-  }, [value, 21000]);
+  }, [value]);
 
   return (
     <div className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
