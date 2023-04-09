@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import Axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import clsx from "clsx";
 
 function Dashboard() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+  const [output, setOutput] = useState();
   const [loading, setLoading] = useState(false);
 
   // TODO: create loading
   const sendInput = async () => {
-    console.log("sent: ", input);
+    console.log("sent to openai");
     const { data } = await Axios.post("/api/generate", {
       prompt: input,
     });
@@ -19,7 +21,7 @@ function Dashboard() {
   };
 
   const parseMessage = (str: string) => {
-    return str.split(/(\n\nAnswer: [A-D]\n\n)/);
+    return str.split(/(Answer: [A-D]\n\n)/);
   };
 
   // Checks for Enter Key and Calls Send Input
@@ -27,11 +29,10 @@ function Dashboard() {
     // if (e.keyCode === 13) sendInput();
   };
 
-
   return (
     <div className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
       <textarea
-        className="box-border max-w-full rounded border-4 border-[#f1741b] bg-[#303030] p-2 text-white scrollbar-hide font-prototype tracking-wider "
+        className="font-prototype box-border max-w-full rounded border-4 border-[#f1741b] bg-[#303030] p-2 tracking-wider text-white scrollbar-hide "
         placeholder="Insert text here..."
         onChange={(e) => setInput(e.target.value)}
         cols={100}
@@ -39,29 +40,30 @@ function Dashboard() {
         onKeyDown={(e) => handleKeyDown(e)}
       />
       <button
-        className={`hover:scale-105 transition duration-500 ease-in-out h-20 w-40 rounded bg-2B2B2B 
-        p-2 text-#F5F5F5 border-4 border-[#f1741b] flex items-center justify-center font-prototype tracking-wider 
-        bg-gradient-to-r from-[#d48a35] to-[#e0572a]`}
+        className={`bg-2B2B2B text-#F5F5F5 font-prototype flex h-20 w-40 items-center justify-center 
+        rounded border-4 border-[#f1741b] bg-gradient-to-r from-[#d48a35] to-[#e0572a] p-2 tracking-wider transition 
+        duration-500 ease-in-out hover:scale-105`}
         style={{ fontSize: "22px" }}
         onClick={() => sendInput()}
       >
         Generate
-
       </button>
 
       <div className="flex flex-col justify-center gap-4 rounded-lg p-4">
-        {output !== "" &&
+        {output &&
           parseMessage(output).map((i, key) => {
-            if (key % 2 == 0) {
-              return (
-                <div
-                  className="gradient flex flex-col whitespace-pre-wrap rounded-lg border-2 border-[#f1741b] bg-[#303030] p-4 font-bold text-white shadow-2xl"
-                  key={key}
-                >
-                  {i}
-                </div>
-              );
-            }
+            const isEven = key % 2 === 0;
+            return (
+              <div
+                className={clsx(
+                  "flex flex-col whitespace-pre-wrap rounded-lg border-2 border-[#f1741b] p-4 font-bold text-white shadow-2xl",
+                  { "border-green-500 p-2": !isEven }
+                )}
+                key={key}
+              >
+                {i}
+              </div>
+            );
           })}
       </div>
     </div>
