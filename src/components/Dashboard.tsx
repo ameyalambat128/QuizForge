@@ -52,7 +52,7 @@ function Dashboard() {
         onKeyDown={(e) => handleKeyDown(e)}
         maxLength={21000}
       />
-      {charLimit && <span>{charLimit}</span>}
+      {charLimit && <span style={{ fontFamily: 'Prototype', fontSize: '1.2rem', color: '#f5f5f5' }}>{charLimit}</span>}
       <button
         className={`bg-2B2B2B text-#F5F5F5 font-prototype flex h-20 w-40 items-center justify-center 
         rounded border-4 border-[#f1741b] bg-gradient-to-r from-[#d48a35] to-[#e0572a] p-2 tracking-wider transition 
