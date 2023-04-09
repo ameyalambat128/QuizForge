@@ -33,13 +33,13 @@ function Dashboard() {
   
   const charLimit = React.useMemo(() => {
     
-    if (value.length >= 500) {
+    if (value.length >= 21000) {
       return "You have reached the maximum number of characters!";
     } else {
-      return `${value.length} / ${500}`;
+      return `${value.length} / ${21000}`;
     }
   
-  }, [value, 500]);
+  }, [value, 21000]);
 
   return (
     <div className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
@@ -50,7 +50,7 @@ function Dashboard() {
         cols={100}
         rows={20}
         onKeyDown={(e) => handleKeyDown(e)}
-        maxLength={500}
+        maxLength={21000}
       />
       {charLimit && <span>{charLimit}</span>}
       <button
