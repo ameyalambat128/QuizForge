@@ -42,7 +42,7 @@ function Dashboard() {
       <button
         className={`bg-2B2B2B text-#F5F5F5 font-prototype flex h-20 w-40 items-center justify-center 
         rounded border-4 border-[#f1741b] bg-gradient-to-r from-[#d48a35] to-[#e0572a] p-2 tracking-wider transition 
-        duration-500 ease-in-out hover:scale-105`}
+        duration-200 ease-in-out hover:scale-105`}
         style={{ fontSize: "22px" }}
         onClick={() => sendInput()}
       >
@@ -57,10 +57,14 @@ function Dashboard() {
               <div
                 className={clsx(
                   "flex flex-col whitespace-pre-wrap rounded-lg border-2 border-[#f1741b] p-4 font-bold text-white shadow-2xl",
-                  { "border-green-500 p-2": !isEven }
+                  {
+                    "border-green-500 bg-green-400 p-2 text-transparent hover:bg-transparent hover:text-white":
+                      !isEven,
+                  }
                 )}
                 key={key}
               >
+                {!isEven && <p className="text-white">Hover For the Answers</p>}
                 {i}
               </div>
             );

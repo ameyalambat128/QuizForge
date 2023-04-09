@@ -22,7 +22,7 @@ export default async function handler(
       messages: [
         {
           role: "user",
-          content: `Generate 10 multiple choices questions with answer keys that have a format like "Answer: A" where question comes first and a new line and then 4 options for each question and another line break before the Answer, text: ${prompt}`,
+          content: `Generate 10 multiple choices questions with answer keys that have a format like "Answer: A" where question comes first and a new line after the question and then 4 options for each question and another line break before the Answer, text: ${prompt}`,
         },
       ],
     });
