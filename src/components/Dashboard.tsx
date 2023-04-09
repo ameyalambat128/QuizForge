@@ -8,7 +8,7 @@ function Dashboard() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState();
   const [loading, setLoading] = useState(false);
-
+  
   // TODO: create loading
   const sendInput = async () => {
     console.log("sent to openai");
@@ -29,16 +29,30 @@ function Dashboard() {
     // if (e.keyCode === 13) sendInput();
   };
 
+  const [value, setValue] = React.useState("");
+  
+  const charLimit = React.useMemo(() => {
+    
+    if (value.length >= 500) {
+      return "You have reached the maximum number of characters!";
+    } else {
+      return `${value.length} / ${500}`;
+    }
+  
+  }, [value, 500]);
+
   return (
     <div className="flex min-h-screen flex-col items-center gap-5 bg-[#1B1C1E] pt-5 dark:text-white">
       <textarea
         className="font-prototype box-border max-w-full rounded border-4 border-[#f1741b] bg-[#303030] p-2 tracking-wider text-white scrollbar-hide "
         placeholder="Insert text here..."
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => (setInput(e.target.value), setValue(e.target.value))}
         cols={100}
         rows={20}
         onKeyDown={(e) => handleKeyDown(e)}
+        maxLength={500}
       />
+      {charLimit && <span>{charLimit}</span>}
       <button
         className={`bg-2B2B2B text-#F5F5F5 font-prototype flex h-20 w-40 items-center justify-center 
         rounded border-4 border-[#f1741b] bg-gradient-to-r from-[#d48a35] to-[#e0572a] p-2 tracking-wider transition 
