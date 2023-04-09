@@ -50,7 +50,11 @@ function Dashboard() {
         onKeyDown={(e) => handleKeyDown(e)}
         maxLength={21000}
       />
-      {charLimit && <span style={{ fontFamily: 'Prototype', fontSize: '14px' }}>{charLimit}</span>}
+      {charLimit && (
+        <span style={{ fontFamily: "Prototype", fontSize: "14px" }}>
+          {charLimit}
+        </span>
+      )}
 
       <button
         className={`bg-2B2B2B text-#F5F5F5 font-prototype flex h-20 w-40 items-center justify-center 
@@ -69,7 +73,7 @@ function Dashboard() {
             return (
               <div
                 className={clsx(
-                  "flex flex-col whitespace-pre-wrap rounded-lg border-2 border-[#f1741b] p-4 font-bold text-white shadow-2xl",
+                  "flex flex-col whitespace-pre-wrap rounded-lg border-2 border-[#f1741b] p-4 font-bold shadow-2xl",
                   {
                     "border-green-500 bg-green-400 p-2 text-transparent hover:bg-transparent hover:text-white":
                       !isEven,
