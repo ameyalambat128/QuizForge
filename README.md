@@ -30,6 +30,10 @@ npm run dev
 ```
 
 ---
+### Demo
+
+[Link to Demo (YouTube)](https://youtu.be/LqQ_a4XFU1k)
+
 
 ### ✍️ Authors
 
@@ -37,3 +41,14 @@ npm run dev
 - [Gavin](https://github.com/gholtzap)
 - [Nick](https://github.com/niekky)
 - [Chaitanya](https://github.com/Chaitanya-Chaurasia)
+
+### Presentation
+![](https://media.discordapp.net/attachments/660884610313486346/1094846235195756554/image.png?width=1199&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846275641409656/image.png?width=1201&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846329454329958/image.png?width=1206&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846364279644250/image.png?width=1202&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846395984388157/image.png?width=1203&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846463395233872/image.png?width=1198&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846503035609179/image.png?width=1207&height=676)
+![](https://media.discordapp.net/attachments/660884610313486346/1094846540629151854/image.png?width=1200&height=676)
+
