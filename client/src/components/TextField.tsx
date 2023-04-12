@@ -5,21 +5,24 @@ export default function TextField({ onSend, buttonClicked }: any) {
 
   const sendInput = () => {
     onSend(input);
-    console.log("Prop Passed");
+    // console.log("Prop Passed");
   };
 
   const handleKeyDown = (e: any) => {
     if (e.keyCode === 13) sendInput();
   };
 
+  
+
   return (
     <textarea
-      className="box-border max-w-full rounded bg-slate-200 p-2 text-black"
-      placeholder="Text here"
+      className="box-border max-w-full overflow-hidden rounded bg-slate-200 p-2 text-black "
+      placeholder="Insert text here..."
       onChange={(e) => setInput(e.target.value)}
       cols={100}
       rows={20}
       onKeyDown={(e) => handleKeyDown(e)}
+      maxLength={12}
     />
   );
 }
